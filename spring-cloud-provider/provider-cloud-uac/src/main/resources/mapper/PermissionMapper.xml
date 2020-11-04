@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pupilary.provider.mapper.PermissionMapper">
+    <resultMap id="BaseResultMap" type="com.pupilary.provider.model.domain.Permission">
+        <!--@mbg.generated-->
+        <!--@Table tb_permission-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `name`, url, sort, parent_id, create_time, update_time, version
+    </sql>
+
+    <select id="findList" resultType="com.pupilary.provider.vo.PermissionVo">
+       select
+        <include refid="Base_Column_List" />
+        from tb_permission
+       <where>
+           1 = 1
+           <if test="query.name != null and query.name != ''">
+               name like concat('%', #{query.name}, '%')
+           </if>
+       </where>
+    </select>
+
+    <select id="findAll" resultType="com.pupilary.provider.vo.PermissionVo">
+        select
+        <include refid="Base_Column_List" />
+        from tb_permission order by create_time desc
+    </select>
+</mapper>

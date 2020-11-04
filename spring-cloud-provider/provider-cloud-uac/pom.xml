@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>provider-cloud-uac</artifactId>
+    <name>provider-cloud-uac</name>
+    <packaging>jar</packaging>
+    <description>spring-cloud-master 用户认证服务</description>
+
+    <parent>
+        <groupId>com.pupilary</groupId>
+        <artifactId>spring-cloud-provider</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>common-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>redis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>auth-client-spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>provider-cloud-uac-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>provider-cloud-uac</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.pupilary.ProviderUacApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

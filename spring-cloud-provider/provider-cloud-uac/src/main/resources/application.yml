@@ -1,0 +1,54 @@
+server:
+  port: 9091
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/micro_pupilary?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      auto-commit: true
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: GMT+8
+    deserialization:
+      fail_on_unknown_properties: false
+    serialization:
+      indent_output: true
+      fail_on_empty_beans: false
+    parser:
+      allow_single_quotes: true
+      allow_unquoted_control_chars: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: com.pupilary.provider.model.domain
+  type-enums-package: com.baomidou.springboot.entity.enums
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-not-delete-value: 1
+      logic-delete-value: 0
+logging:
+  config: classpath:logback-spring.xml

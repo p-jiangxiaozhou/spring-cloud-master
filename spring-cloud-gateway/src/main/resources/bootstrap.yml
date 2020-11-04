@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-cloud-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        namespace: 45a38613-cd97-422e-9452-9ba81d55c4b7
+        file-extension: yaml
+        extension-configs[0]:
+          data-id: spring-cloud-gateway.yaml
+        endpoint: acm.aliyun.com
+        access-key: LTAI4GBArruHdESrz2SVEfo9
+        secret-key: IljBCYIXKdLuC7Qjtfb02z7rEkvcHk
+      discovery:
+        namespace: 4e953aa7-5fd1-4077-8570-808195be3b71
+        server-addr: 127.0.0.1:8848
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

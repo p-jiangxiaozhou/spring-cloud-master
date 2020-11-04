@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-boot-dependencies</artifactId>
+    <name>spring-boot-dependencies</name>
+    <packaging>pom</packaging>
+    <description>spring-cloud-master 公共spring boot strater模块</description>
+
+    <parent>
+        <groupId>com.pupilary</groupId>
+        <artifactId>spring-cloud-master</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modules>
+        <module>mybatis-spring-boot-starter</module>
+        <module>redis-spring-boot-starter</module>
+    </modules>
+
+    <properties>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>redis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>spring-business-commons</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>spring-boot-dependencies</finalName>
+    </build>
+
+</project>

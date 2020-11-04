@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-business-commons</artifactId>
+    <name>spring-business-commons</name>
+    <packaging>pom</packaging>
+    <description>spring-cloud-master 公共business-commons模块</description>
+
+    <parent>
+        <groupId>com.pupilary</groupId>
+        <artifactId>spring-cloud-master</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <hutool.version>5.4.2</hutool.version>
+    </properties>
+
+    <modules>
+        <module>common-base</module>
+        <module>common-core</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>common-base</artifactId>
+                <version>${parent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>spring-business-commons</finalName>
+    </build>
+
+</project>

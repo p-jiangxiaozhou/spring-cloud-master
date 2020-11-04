@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: provider-cloud-uac
+  cloud:
+    nacos:
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        extension-configs[0]:
+          data-id: application.yaml
+        server-addr: ${spring.cloud.nacos.server-addr}
+      discovery:
+        namespace: 4b96e584-79b6-4812-a1fe-1c5a4bf59ce5
+      server-addr: 127.0.0.1:8848
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+

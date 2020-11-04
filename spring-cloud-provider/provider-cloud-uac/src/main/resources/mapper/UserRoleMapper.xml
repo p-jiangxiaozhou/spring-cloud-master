@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pupilary.provider.mapper.UserRoleMapper">
+    <resultMap id="BaseResultMap" type="com.pupilary.provider.model.domain.UserRole">
+        <!--@mbg.generated-->
+        <!--@Table uac_user_role-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, user_id, role_id, create_time, update_time, version
+    </sql>
+
+    <delete id="deleteUserRoleByUserIdAndRoleId" parameterType="java.lang.Long">
+        delete from uac_user_role
+        <where>
+            user_id = #{userId}
+            and role_id =#{roleId}
+        </where>
+    </delete>
+
+    <select id="findRoleByUserId" resultType="com.pupilary.provider.vo.RoleVo" parameterType="java.lang.Long">
+        select * from uac_role as r
+        inner join uac_user_role as ur on ur.role_id = r.id
+        <where>
+            ur.user_id = #{userId}
+        </where>
+    </select>
+
+    <select id="findRoleByUserIds" resultType="com.pupilary.provider.vo.RoleVo" parameterType="java.util.Set">
+        select r.* from uac_role as r
+        inner join uac_user_role as ur on r.id = ur.role_id
+        <where>
+            ur.user_id in
+            <foreach collection="userIds" index="index" item="userId" open="(" separator=")" close=")">
+                #{userId,jdbcType=BIGINT}
+            </foreach>
+        </where>
+    </select>
+</mapper>

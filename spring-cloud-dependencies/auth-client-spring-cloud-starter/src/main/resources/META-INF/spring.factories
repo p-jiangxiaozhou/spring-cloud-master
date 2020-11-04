@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.pupilary.oauth2.SecurityAuthClientConfigurer,\
+  com.pupilary.oauth2.store.AuthRedisTokenStore,\
+  com.pupilary.oauth2.store.AuthJwtTokenStore,\
+  com.pupilary.oauth2.store.ResJwtTokenStore

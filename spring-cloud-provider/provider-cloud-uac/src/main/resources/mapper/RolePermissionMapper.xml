@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pupilary.provider.mapper.RolePermissionMapper">
+    <resultMap id="BaseResultMap" type="com.pupilary.provider.model.domain.RolePermission">
+        <!--@mbg.generated-->
+        <!--@Table uac_role_permission-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="permission_id" jdbcType="BIGINT" property="permissionId"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, role_id, permission_id, create_time, update_time, version
+    </sql>
+
+    <select id="findPermissionByRoleIds" resultType="com.pupilary.provider.vo.PermissionVo"
+            parameterType="java.util.Set">
+        select distinct p.* from tb_permission as p
+        inner join uac_role_permission as rp on rp.permission_id = p.id
+        <where>
+            rp.role_id in
+            <foreach collection="roleIds" index="index" item="roleId" open="(" separator="," close=")">
+                #{roleId}
+            </foreach>
+        </where>
+        order by p.sort asc
+    </select>
+
+    <delete id="deleteRolePermissionByRoleIdAndPermissionId" parameterType="java.lang.Long">
+        delete from uac_role_permission
+        <where>
+            <if test="roleId != null">
+                and role_id = #{roleId}
+            </if>
+            <if test="permissionId != null">
+                and permission_id = #{permissionId}
+            </if>
+        </where>
+    </delete>
+
+    <select id="findPermissionByRoleCodes" resultType="com.pupilary.provider.vo.PermissionVo"
+            parameterType="java.util.Set">
+        select distinct p.* from tb_permission as p
+        inner join uac_role_permission as rp on rp.permission_id = p.id
+        inner join uac_role as r on r.id = rp.role_id
+        <where>
+            r.code in
+            <foreach collection="roleCodes" item="roleCode" index="index" open="(" separator="," close=")">
+                #{roleCode}
+            </foreach>
+        </where>
+        order by p.sort asc
+    </select>
+</mapper>
