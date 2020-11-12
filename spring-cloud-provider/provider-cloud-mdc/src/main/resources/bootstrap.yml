@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: provider-cloud-mdc
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+

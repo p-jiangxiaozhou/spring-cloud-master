@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pupilary.provider.mapper.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.pupilary.provider.model.domain.Goods">
+        <!--@mbg.generated-->
+        <!--@Table mdc_goods-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sub_title" jdbcType="VARCHAR" property="subTitle"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="discount" jdbcType="DECIMAL" property="discount"/>
+        <result column="integral" jdbcType="INTEGER" property="integral"/>
+        <result column="summary" jdbcType="LONGVARCHAR" property="summary"/>
+        <result column="is_active" jdbcType="BOOLEAN" property="isActive"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `name`, sub_title, img, category_id, price, discount, integral, summary, is_active,
+        create_time, update_time, version
+    </sql>
+</mapper>

@@ -13,6 +13,10 @@ spring:
       force: true
   main:
     allow-bean-definition-overriding: true
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/WEB-INF/static/
   jackson:
     date-format: "yyyy-MM-dd HH:mm:ss"
     time-zone: GMT+8
@@ -24,5 +28,11 @@ spring:
     parser:
       allow_single_quotes: true
       allow_unquoted_control_chars: true
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/WEB-INF/templates/
+    mode: HTML5
+    suffix: .html
 logging:
   config: classpath:logback-spring.xml
