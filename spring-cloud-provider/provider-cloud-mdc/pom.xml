@@ -40,6 +40,10 @@
             <groupId>com.pupilary</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>provider-cloud-mdc-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

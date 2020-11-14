@@ -16,4 +16,12 @@
         <!--@mbg.generated-->
         id, `name`, parent_id, is_active, create_time, update_time, version
     </sql>
+
+    <select id="selectCategoryByIsActive" resultType="com.pupilary.provider.vo.CategoryVo" parameterType="java.lang.Boolean">
+        select <include refid="Base_Column_List" />
+        from mdc_category
+        <where>
+            is_active = #{isActive}
+        </where>
+    </select>
 </mapper>

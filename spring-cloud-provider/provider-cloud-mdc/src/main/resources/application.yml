@@ -4,6 +4,8 @@ server:
     remote-ip-header: x-forwarded-for
     protocol-header: x-forwarded-proto
 spring:
+  application:
+    name: provider-cloud-mdc
   http:
     encoding:
       charset: UTF-8
@@ -14,7 +16,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/micro_pupilary?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://127.0.0.1:3306/ms_micro?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
     hikari:

@@ -18,9 +18,57 @@
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
         <result column="version" jdbcType="INTEGER" property="version"/>
     </resultMap>
+
+    <resultMap id="ResultVoMap" type="com.pupilary.provider.vo.GoodsVo">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sub_title" jdbcType="VARCHAR" property="subTitle"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="category_id" jdbcType="BIGINT" property="categoryId"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="discount" jdbcType="DECIMAL" property="discount"/>
+        <result column="integral" jdbcType="INTEGER" property="integral"/>
+        <result column="summary" jdbcType="LONGVARCHAR" property="summary"/>
+        <result column="is_active" jdbcType="BOOLEAN" property="isActive"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <collection property="goodsPics" ofType="com.pupilary.provider.vo.GoodsPicVo"
+                    select="com.pupilary.provider.mapper.GoodsPicMapper.selectGoodsPicByGoodsId" column="id" />
+    </resultMap>
+
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
         id, `name`, sub_title, img, category_id, price, discount, integral, summary, is_active,
         create_time, update_time, version
     </sql>
+
+    <select id="selectGoodsByPage" resultMap="ResultVoMap">
+        select
+        <include refid="Base_Column_List"/>
+        from mdc_goods
+        <where>
+            1 = 1
+            <if test="query.categoryId != null">
+                and category_id = #{query.categoryId}
+            </if>
+            <choose>
+                <when test="query.isActive != null">
+                    and is_active = #{query.isActive}
+                </when>
+                <otherwise>
+                    and is_active = 1
+                </otherwise>
+            </choose>
+        </where>
+        order by create_time desc
+    </select>
+
+    <select id="selectGoodsById" resultMap="ResultVoMap" parameterType="java.lang.Long">
+        select <include refid="Base_Column_List" />
+        from mdc_goods
+        <where>
+            id = #{id}
+        </where>
+    </select>
 </mapper>
