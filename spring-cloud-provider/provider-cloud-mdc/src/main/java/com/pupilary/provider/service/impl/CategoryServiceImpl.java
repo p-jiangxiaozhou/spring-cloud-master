@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.pupilary.provider.mapper.CategoryMapper;
 import com.pupilary.provider.model.domain.Category;
 import com.pupilary.provider.model.enums.CategoryStatus;
-import com.pupilary.provider.query.CategoryQuery;
 import com.pupilary.provider.service.CategoryService;
 import com.pupilary.provider.vo.CategoryVo;
 import lombok.AllArgsConstructor;
