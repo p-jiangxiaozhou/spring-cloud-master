@@ -39,7 +39,7 @@ public class GoodsController extends BaseController {
         );
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}/detail")
     public Wrapper<GoodsVo> detail(@PathVariable Long id) {
         GoodsVo result = goodsService.getById(id);
         return WrapMapper.ok(result);

@@ -50,5 +50,8 @@ mybatis-plus:
       id-type: auto
       logic-not-delete-value: 1
       logic-delete-value: 0
+pupilary:
+  resources:
+    media-url-pattern: http://127.0.0.1:8000/
 logging:
   config: classpath:logback-spring.xml

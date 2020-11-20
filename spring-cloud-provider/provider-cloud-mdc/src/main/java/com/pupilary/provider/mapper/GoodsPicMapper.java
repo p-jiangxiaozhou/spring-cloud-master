@@ -18,8 +18,9 @@ public interface GoodsPicMapper extends BaseMapper<GoodsPic> {
     /**
      * selectGoodsPicByGoodsId
      *
-     * @param goodsId goodsId
+     * @param mediaUrl mediaUrl
+     * @param goodsId  goodsId
      * @return list
      */
-    List<GoodsPicVo> selectGoodsPicByGoodsId(@Param("goodsId") Long goodsId);
+    List<GoodsPicVo> selectGoodsPicByGoodsId(@Param("mediaUrl") String mediaUrl, @Param("goodsId") Long goodsId);
 }

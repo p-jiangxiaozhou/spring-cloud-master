@@ -19,16 +19,18 @@ public interface GoodsMapper extends BaseMapper<Goods> {
      * selectGoodsByPage
      *
      * @param page       page
+     * @param mdiaUrl    mediaUrl
      * @param goodsQuery goodsQuery
      * @return page
      */
-    IPage<GoodsVo> selectGoodsByPage(IPage<GoodsVo> page, @Param("query") GoodsQuery goodsQuery);
+    IPage<GoodsVo> selectGoodsByPage(IPage<GoodsVo> page, @Param("mediaUrl") String mdiaUrl, @Param("query") GoodsQuery goodsQuery);
 
     /**
      * selectGoodsById
      *
-     * @param id goodsId
+     * @param mediaUrl mediaUrl
+     * @param id       goodsId
      * @return goods
      */
-    GoodsVo selectGoodsById(@Param("id") Long id);
+    GoodsVo selectGoodsById(@Param("mediaUrl") String mediaUrl, @Param("id") Long id);
 }

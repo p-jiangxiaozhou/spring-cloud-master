@@ -43,9 +43,8 @@
         create_time, update_time, version
     </sql>
 
-    <select id="selectGoodsByPage" resultMap="ResultVoMap">
-        select
-        <include refid="Base_Column_List"/>
+    <select id="selectGoodsByPage" resultType="com.pupilary.provider.vo.GoodsVo">
+        select id, name, sub_title, concat(#{mediaUrl}, img) as img, price, discount, integral, summary
         from mdc_goods
         <where>
             1 = 1
@@ -64,8 +63,8 @@
         order by create_time desc
     </select>
 
-    <select id="selectGoodsById" resultMap="ResultVoMap" parameterType="java.lang.Long">
-        select <include refid="Base_Column_List" />
+    <select id="selectGoodsById" resultType="com.pupilary.provider.vo.GoodsVo" parameterType="java.lang.Long">
+        select id, name, sub_title, concat(#{mediaUrl}, img) as img, price, discount, integral, summary
         from mdc_goods
         <where>
             id = #{id}

@@ -17,7 +17,8 @@
     </sql>
 
     <select id="selectGoodsPicByGoodsId" resultType="com.pupilary.provider.vo.GoodsPicVo" parameterType="java.lang.Long">
-        select <include refid="Base_Column_List" />
+        select
+        id, concat(#{mediaUrl}, url) as url, goods_id
         from mdc_goods_pic
         <where>
             goods_id = #{goodsId}
