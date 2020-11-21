@@ -1,0 +1,15 @@
+server:
+  port: 9092
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  alipay:
+    app-id: xxx
+    merchant-private-key: xxx
+    merchant-cert-path: xxx
+    alipay-cert-path: xxx
+    alipay-root-cert-path: xxx
+    notify-url: xxx
+    encrypt-key: xxx
+logging:
+  config: classpath:logback-spring.xml

@@ -21,6 +21,7 @@
 
     <properties>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <alipay-easysdk.version>2.1.0</alipay-easysdk.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,16 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-easysdk</artifactId>
+                <version>${alipay-easysdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>alipay-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.pupilary</groupId>

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: provider-cloud-mdc
+    name: provider-cloud-omc
   cloud:
     nacos:
       config:
