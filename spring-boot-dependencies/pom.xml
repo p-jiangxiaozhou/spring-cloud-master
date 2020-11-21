@@ -14,6 +14,7 @@
     </parent>
 
     <modules>
+        <module>alipay-spring-boot-starter</module>
         <module>mybatis-spring-boot-starter</module>
         <module>redis-spring-boot-starter</module>
     </modules>

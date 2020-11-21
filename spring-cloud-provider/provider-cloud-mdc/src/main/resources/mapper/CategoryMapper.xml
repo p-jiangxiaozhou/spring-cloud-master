@@ -6,6 +6,7 @@
         <!--@Table mdc_category-->
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sub_title" jdbcType="VARCHAR" property="subTitle" />
         <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
         <result column="is_active" jdbcType="BOOLEAN" property="isActive"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
@@ -14,7 +15,7 @@
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        id, `name`, parent_id, is_active, create_time, update_time, version
+        id, `name`, sub_title, parent_id, is_active, create_time, update_time, version
     </sql>
 
     <select id="selectCategoryByIsActive" resultType="com.pupilary.provider.vo.CategoryVo" parameterType="java.lang.Boolean">

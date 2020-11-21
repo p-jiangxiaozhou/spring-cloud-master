@@ -25,6 +25,10 @@ public class CategoryVo implements Serializable {
     private String name;
 
     /**
+     * subTitle
+     */
+    private String subTitle;
+    /**
      * 上级分类id
      */
     private Long parentId;

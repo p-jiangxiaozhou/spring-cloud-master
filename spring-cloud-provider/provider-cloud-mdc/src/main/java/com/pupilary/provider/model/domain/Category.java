@@ -24,6 +24,12 @@ public class Category extends BaseEntity {
     private String name;
 
     /**
+     * subTitle
+     */
+    @TableField(value = "sub_title")
+    private String subTitle;
+
+    /**
      * 上级分类id
      */
     @TableField(value = "parent_id")
@@ -38,6 +44,8 @@ public class Category extends BaseEntity {
     public static final String COL_ID = "id";
 
     public static final String COL_NAME = "name";
+
+    public static final String COL_SUB_TITLE = "sub_title";
 
     public static final String COL_PARENT_ID = "parent_id";
 

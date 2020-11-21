@@ -16,6 +16,7 @@
     <modules>
         <module>provider-cloud-mac</module>
         <module>provider-cloud-mdc</module>
+        <module>provider-cloud-omc</module>
         <module>provider-cloud-uac</module>
     </modules>
 
