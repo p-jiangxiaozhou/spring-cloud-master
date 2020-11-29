@@ -16,6 +16,10 @@
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
         <dependency>
@@ -44,10 +48,18 @@
             <groupId>com.pupilary</groupId>
             <artifactId>alipay-spring-boot-starter</artifactId>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.pupilary</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>-->
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>provider-cloud-omc-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pupilary</groupId>
+            <artifactId>provider-cloud-mdc-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

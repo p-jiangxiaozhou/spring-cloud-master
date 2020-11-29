@@ -15,6 +15,7 @@
 
     <modules>
         <module>auth-client-spring-cloud-starter</module>
+        <module>openfeign-spring-cloud-starter</module>
     </modules>
 
     <dependencies>
@@ -33,6 +34,11 @@
             <dependency>
                 <groupId>com.pupilary</groupId>
                 <artifactId>auth-client-spring-cloud-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>openfeign-spring-cloud-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

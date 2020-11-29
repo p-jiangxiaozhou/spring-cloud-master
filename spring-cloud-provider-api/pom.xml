@@ -16,6 +16,7 @@
     <modules>
         <module>provider-cloud-mac-api</module>
         <module>provider-cloud-mdc-api</module>
+        <module>provider-cloud-omc-api</module>
         <module>provider-cloud-uac-api</module>
     </modules>
 
@@ -25,6 +26,13 @@
 
     <dependencyManagement>
         <dependencies>
+        	 <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>com.pupilary</groupId>
                 <artifactId>provider-cloud-mac-api</artifactId>
@@ -33,6 +41,11 @@
             <dependency>
                 <groupId>com.pupilary</groupId>
                 <artifactId>provider-cloud-mdc-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pupilary</groupId>
+                <artifactId>provider-cloud-omc-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

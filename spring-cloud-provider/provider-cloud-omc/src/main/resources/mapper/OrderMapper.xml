@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pupilary.provider.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.pupilary.provider.model.domain.Order">
+        <!--@mbg.generated-->
+        <!--@Table omc_order-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="no" jdbcType="VARCHAR" property="no"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="pay_type" jdbcType="TINYINT" property="payType"/>
+        <result column="state" jdbcType="TINYINT" property="state"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `no`, price, pay_type, `state`, create_time, update_time, version
+    </sql>
+</mapper>

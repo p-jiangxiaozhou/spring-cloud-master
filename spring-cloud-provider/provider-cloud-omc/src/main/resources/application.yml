@@ -4,12 +4,12 @@ spring:
   main:
     allow-bean-definition-overriding: true
   alipay:
-    app-id: xxx
-    merchant-private-key: xxx
-    merchant-cert-path: xxx
-    alipay-cert-path: xxx
-    alipay-root-cert-path: xxx
-    notify-url: xxx
-    encrypt-key: xxx
+    app-id: 2021002109605024
+    merchant-private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCJAX2s4Myl0SdChwgvOjBI50rwDgl6gUS5MxeJZH+Ov+/U5UIvEcPQrr0WrXSPR//qmECAWlvAXiW1KICfA7RF5w3PC1cwHaQk0AXF5ZES5des15hZeiD5xwTXlDEKm1TwZHHgVfnlov9bBxI14+/G6c7LwnDhASy8Op3ya2fNI9FHdWcdbDEZGE4lReNAMoiU+kNd8aE7fLX4lZJUo1/0Su7ExiC3LIYk6oOfJX3w+Sr8HR4MfdM5r3NLTe612tpFTfBQ5tXlI0sLUFEE1PkHQnNqB2t+lTaVMFfDfCWdTNLGI9F5PACvKIutsw6r0sBK2IL0Xv53oCBsgZrA7GFlAgMBAAECggEAW6CJonL9qvAEZ7PTP3KVFEzLi1x37lxBz/JhjVuPC7NF/IYPC1fAM/KJN39t8t1eRFDq4myL7E2KvmuGCdL6X721OIEHIIDSZGRTWBS+P3tEEK5nj3/kSehWTq8nVUapOdSTbEtTw8aNLR2/ihcVJ1z7Fr7Fq1WTy5cQRy6Zz1FoCLqF6v8o12F0V+FQge9lG/AtO6BOfAdum1qFRQIX/ZK6gnNnJnnsBlX7Lvlo1kkPnzrvEKMaxag34eiI8BpzMoT+IqN8MVVVdf6VluSm1JX9X6oXVt02sHp56JFPVYT856+xqeyuDDyE/CE+MlowtD9yMD29Yrjph3rB+C6RQQKBgQDHZ8jekRpG2pzDSPhcnXfIyeDkAxEUTB/539hrJmscXhx/bHJLgAqCMYuhy6QW5PEOzQD6NCbhs0311n+elhC4f9ADk3m1doFhKfQQ8u87oEZSYAo2Pjhz8RSrucR9ECrE2quC/J1EIvnJRTrghcPasX73sK9rUKV0aBEg/waTfQKBgQCv4+84IrCJPN5qja0666tYzS6+JsfF/0Xezzh7jwost1pGbfZNLGEvoFOrs0LWaJK2KvWxyhlQuYRBw1mQK4tz/emT3oiqs4Vh+1D94rbmDu/ILg2RY7UTNcr8VJmyKQtI31RR13QQbVQZF7nCHtwxaMz0Y1TYyHBohPUfSliaCQKBgH23OvbG+JAPJ6IfESYiyPA4Bqb6H/xx+f7pV2JGeGUMGF9lmbFr6jQm1GePIcalVC0GpkUYOCM3jkEdmJv89FG9kwGOKr9zFSKS9qLw5k7rPyqUDhwgoirGpUeW+P/3/17YliUg6m2Yt25jTTlcXBw2p1u1cwLvd0Cqk5H/9r9pAoGAbXyqHTxivZrZLGSyj3nBuE5IqW8EbfiAKri9BRS+FaWwmSS768ATYw0e6EN2+HYx1RmaxSfzaC+C51jNuJOShAprSnN8iR2kiqBhAxkMFtr3YZlhMr5pKeMTTszuu1sXPi5ek29VPSCA9/mv1OlW0Z7V7c6jMypZ5oXU+7xQuNkCgYB9yfbK1UfjcUzQqMNXhGeCae2QwomA+RodeL+blVYveVsxtveLY6OeHVLfPKE56Lf+YgZnQH8wL+V+MPBHc2XPfGfL7dp66lmLbakZUcknmSu2OKM3+gNsOdkEC9zG+ZFatZkAqyRNd5i3o+SfMysyN4kbaJfJo/NfR+4GWcjglQ==
+    merchant-cert-path: cert/appCertPublicKey.crt #应用公钥证书路径
+    alipay-cert-path: cert/alipayCertPublicKey.crt #支付宝公钥证书路径
+    alipay-root-cert-path: cert/alipayRootCert.crt #支付宝根证书路径
+    notify-url: http://127.0.0.1:8080/omc/alipay/callback
+    encrypt-key: diSPhIOVOvg65nwiotQs8w==
 logging:
   config: classpath:logback-spring.xml

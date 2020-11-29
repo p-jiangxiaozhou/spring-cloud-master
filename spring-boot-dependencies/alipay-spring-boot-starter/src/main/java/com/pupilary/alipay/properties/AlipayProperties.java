@@ -13,20 +13,23 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "spring.alipay")
 public class AlipayProperties implements Serializable {
 
+    private static final long serialVersionUID = 6344794809181880181L;
+
     private String appId;
 
     /**
-     * 私钥
+     * 应用私钥
      */
     private String merchantPrivateKey;
 
     /**
      * 应用公钥证书文件路径
+     * 证书文件路径支持设置为文件系统中的路径或CLASS_PATH中的路径，优先从文件系统中加载，加载失败后会继续尝试从CLASS_PATH中加载
      */
     private String merchantCertPath;
 
     /**
-     * 公钥证书文件路径
+     * 应用公钥证书文件路径
      */
     private String alipayCertPath;
 

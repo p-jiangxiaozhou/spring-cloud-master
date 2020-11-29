@@ -19,11 +19,12 @@ public class AlipayAutoConfiguer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // 设置参数（全局只需设置一次）
-        Factory.setOptions(this.getOptions());
+        // 设置参数（全局只需设置一次
+        Config config = getOptions(alipayProperties);
+        Factory.setOptions(config);
     }
 
-    private Config getOptions() {
+    private static Config getOptions(AlipayProperties alipayProperties) {
         Config config = new Config();
         config.protocol = alipayProperties.getProtocol();
         config.gatewayHost = alipayProperties.getGatewayHost();
@@ -34,7 +35,6 @@ public class AlipayAutoConfiguer implements CommandLineRunner {
         config.alipayCertPath = alipayProperties.getAlipayCertPath();
         config.alipayRootCertPath = alipayProperties.getAlipayRootCertPath();
         config.alipayPublicKey = alipayProperties.getAlipayPublicKey();
-
         config.notifyUrl = alipayProperties.getNotifyUrl();
         config.encryptKey = alipayProperties.getEncryptKey();
         return config;

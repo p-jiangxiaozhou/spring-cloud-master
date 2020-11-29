@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>provider-cloud-mdc-api</artifactId>
-    <name>provider-cloud-mdc-api</name>
-    <packaging>jar</packaging>
-    <description>spring-cloud-master 数据中心服务api</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>provider-cloud-mdc-api</artifactId>
+	<name>provider-cloud-mdc-api</name>
+	<packaging>jar</packaging>
+	<description>spring-cloud-master 数据中心服务api</description>
 
-    <parent>
-        <groupId>com.pupilary</groupId>
-        <artifactId>spring-cloud-provider-api</artifactId>
-        <version>1.0.0</version>
-    </parent>
+	<parent>
+		<groupId>com.pupilary</groupId>
+		<artifactId>spring-cloud-provider-api</artifactId>
+		<version>1.0.0</version>
+	</parent>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.pupilary</groupId>
+			<artifactId>openfeign-spring-cloud-starter</artifactId>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <finalName>provider-cloud-mdc-api</finalName>
-    </build>
+	<build>
+		<finalName>provider-cloud-mdc-api</finalName>
+	</build>
 
 </project>

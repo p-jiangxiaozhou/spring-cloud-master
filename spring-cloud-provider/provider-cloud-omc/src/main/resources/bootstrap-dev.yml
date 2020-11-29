@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        extension-configs[0]:
+          data-id: application.yaml
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+      discovery:
+        namespace: 4e953aa7-5fd1-4077-8570-808195be3b71
+        server-addr: 127.0.0.1:8848
