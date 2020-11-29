@@ -10,14 +10,10 @@ import com.pupilary.provider.mapper.OrderMapper;
 import com.pupilary.provider.model.domain.Order;
 import com.pupilary.provider.service.OrderService;
 import com.pupilary.provider.vo.GoodsVo;
-
 import lombok.AllArgsConstructor;
-
-import java.time.LocalTime;
-import java.util.Objects;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 /**
  * @author takesi
@@ -28,9 +24,8 @@ import org.springframework.stereotype.Service;
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {
 	
 	private final OrderMapper orderMapper;
-	
-	@Autowired
-	private GoodsFeignApi goodsFeignApi;
+
+	private final GoodsFeignApi goodsFeignApi;
 
 	@Override
 	public String wrapPay(OrderDto orderDto) throws Exception {

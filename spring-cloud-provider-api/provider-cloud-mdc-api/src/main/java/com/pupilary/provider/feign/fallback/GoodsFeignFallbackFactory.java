@@ -9,26 +9,24 @@ import com.pupilary.provider.vo.GoodsVo;
 import feign.hystrix.FallbackFactory;
 
 /**
- * 
  * @author takesi
- *
  */
 public class GoodsFeignFallbackFactory implements FallbackFactory<GoodsFeignApi> {
-	
-	private static final Logger logger = LoggerFactory.getLogger(GoodsFeignFallbackFactory.class);
 
-	@Override
-	public GoodsFeignApi create(Throwable cause) {
+    private static final Logger logger = LoggerFactory.getLogger(GoodsFeignFallbackFactory.class);
 
-		return new GoodsFeignApi() {
+    @Override
+    public GoodsFeignApi create(Throwable cause) {
 
-			@Override
-			public GoodsVo getById(Long goodsId) {
-				logger.error("查询商品:{}信息失败!{}", goodsId, cause);
-				return null;
-			}
+        return new GoodsFeignApi() {
 
-		};
-	}
+            @Override
+            public GoodsVo getById(Long goodsId) {
+                logger.error("查询商品:{}信息失败!{}", goodsId, cause);
+                return new GoodsVo();
+            }
+
+        };
+    }
 
 }

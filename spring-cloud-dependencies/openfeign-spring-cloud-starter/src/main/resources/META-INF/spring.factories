@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-	com.pupilary.openfeogn.OpenFeignAutoConfigure
+  com.pupilary.openfeign.OpenFeignAutoConfigure,\
+  com.pupilary.openfeign.RestTemplateAutoConfigure

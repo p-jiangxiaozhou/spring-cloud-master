@@ -27,7 +27,7 @@ public class DefaultPropertiesFactory extends PropertiesFactory {
 	@Autowired
     private Environment environment;
 	
-	private Map<Class, String> classToProperty = new HashMap<>(5);
+	private final Map<Class, String> classToProperty = new HashMap<>(5);
 
     public DefaultPropertiesFactory() {
         super();
