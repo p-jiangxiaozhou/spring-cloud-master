@@ -15,7 +15,9 @@ import java.io.Serializable;
 @ConfigurationProperties(prefix = "spring.rest-template")
 public class RestTemplateProperties implements Serializable {
 
-    /**
+	private static final long serialVersionUID = 3491024707748890013L;
+	
+	/**
      * 最大链接数
      */
     private int maxTotal = 200;

@@ -2,6 +2,7 @@ package com.pupilary.provider.feign.fallback;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.pupilary.provider.feign.GoodsFeignApi;
 import com.pupilary.provider.vo.GoodsVo;
@@ -11,6 +12,7 @@ import feign.hystrix.FallbackFactory;
 /**
  * @author takesi
  */
+@Component
 public class GoodsFeignFallbackFactory implements FallbackFactory<GoodsFeignApi> {
 
     private static final Logger logger = LoggerFactory.getLogger(GoodsFeignFallbackFactory.class);

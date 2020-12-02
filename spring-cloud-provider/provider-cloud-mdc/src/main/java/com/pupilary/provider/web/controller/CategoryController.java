@@ -1,4 +1,4 @@
-package com.pupilary.provider.controller;
+package com.pupilary.provider.web.controller;
 
 import com.pupilary.base.wrapper.WrapMapper;
 import com.pupilary.base.wrapper.Wrapper;

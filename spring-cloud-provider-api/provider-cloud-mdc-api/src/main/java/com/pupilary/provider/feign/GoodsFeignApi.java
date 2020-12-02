@@ -19,7 +19,7 @@ public interface GoodsFeignApi {
      * @param goodsId goodsId
      * @return GoodsVo goodsVo
      */
-    @GetMapping(value = "/goods/{id}/detail")
+    @GetMapping(value = "/api/goods/{id}/detail")
     GoodsVo getById(@PathVariable("id") Long goodsId);
 
 }

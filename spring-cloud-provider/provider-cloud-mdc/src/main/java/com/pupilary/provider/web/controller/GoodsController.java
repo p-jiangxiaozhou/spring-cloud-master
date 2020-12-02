@@ -1,4 +1,4 @@
-package com.pupilary.provider.controller;
+package com.pupilary.provider.web.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.pupilary.base.wrapper.PageWrapMapper;
